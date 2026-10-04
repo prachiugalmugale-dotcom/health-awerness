@@ -3,314 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Awareness Campaign</title>
+    <meta name="description" content="HealthAware is a mobile app concept for everyday health awareness, habit tracking, reminders, BMI screening, and wellness education.">
+    <title>HealthAware Mobile App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="HealthAware home">
+            <span class="brand-mark" aria-hidden="true">+</span>
+            <span>HealthAware</span>
+        </a>
+        <nav aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#habits">Habits</a>
+            <a href="#tools">Tools</a>
+            <a href="#quiz">Quiz</a>
+            <a class="nav-cta" href="#tools">Open Tools</a>
+        </nav>
+    </header>
 
-<header>
-    <h1>💚 HealthCare</h1>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#awareness">Awareness</a>
-        <a href="#nutrition">Nutrition</a>
-        <a href="#fitness">Fitness</a>
-        <a href="#mental">Mental Health</a>
-        <a href="#bmi">BMI</a>
-        <a href="#quiz">Quiz</a>
-        <a href="#water">Water</a>
-    </nav>
-</header>
-
-<!-- Home -->
-<section id="home" class="hero">
-    <h2>Health Awareness Campaign</h2>
-
-    <p>
-        Your health is your greatest wealth.
-        Learn simple ways to stay healthy, active and happy.
-    </p>
-
-    <button onclick="showMessage()">
-        Start Your Healthy Journey
-    </button>
-</section>
-
-<!-- Awareness -->
-<section id="awareness">
-    <h2>🌿 Health Awareness</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🥗 Healthy Food</h3>
-            <p>Eat a variety of nutritious foods every day.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏃 Exercise</h3>
-            <p>Stay physically active through walking, sports or exercise.</p>
-        </div>
-
-        <div class="card">
-            <h3>😴 Good Sleep</h3>
-            <p>A regular sleep routine supports overall well-being.</p>
-        </div>
-
-        <div class="card">
-            <h3>💧 Stay Hydrated</h3>
-            <p>Drink water regularly throughout the day.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- Nutrition -->
-<section id="nutrition" class="light">
-    <h2>🥗 Food & Nutrition</h2>
-
-    <ul class="tips">
-        <li>Eat fruits and vegetables.</li>
-        <li>Choose balanced meals.</li>
-        <li>Limit foods very high in added sugar or salt.</li>
-        <li>Drink enough water.</li>
-        <li>Try not to skip regular meals.</li>
-    </ul>
-</section>
-
-<!-- Fitness -->
-<section id="fitness">
-    <h2>🏃 Exercise & Fitness</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🚶 Walking</h3>
-            <p>Walking is a simple way to stay active.</p>
-        </div>
-
-        <div class="card">
-            <h3>🧘 Yoga</h3>
-            <p>Yoga can support flexibility and relaxation.</p>
-        </div>
-
-        <div class="card">
-            <h3>🤸 Stretching</h3>
-            <p>Gentle stretching can help improve flexibility.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- Mental Health -->
-<section id="mental" class="light">
-    <h2>🧠 Mental Health</h2>
-
-    <div class="mental-box">
-
-        <p>💬 Talk to someone you trust.</p>
-        <p>🌿 Take time to relax.</p>
-        <p>😴 Maintain a healthy sleep routine.</p>
-        <p>📚 Take breaks while studying or working.</p>
-        <p>🤝 Ask a trusted adult or professional for help when needed.</p>
-
-    </div>
-</section>
-
-<!-- BMI -->
-<section id="bmi">
-    <h2>⚖️ BMI Calculator</h2>
-
-    <div class="bmi-box">
-
-        <label>Height (cm)</label>
-        <input type="number" id="height" placeholder="Enter height">
-
-        <label>Weight (kg)</label>
-        <input type="number" id="weight" placeholder="Enter weight">
-
-        <button onclick="calculateBMI()">
-            Calculate BMI
-        </button>
-
-        <div id="bmiResult"></div>
-
-    </div>
-</section>
-
-<!-- Health Quiz -->
-<section id="quiz" class="light">
-
-    <h2>📝 Health Awareness Quiz</h2>
-
-    <div class="quiz-box">
-
-        <form id="quizForm">
-
-            <div class="question">
-                <p><b>1. Which is important for healthy hydration?</b></p>
-
-                <label>
-                    <input type="radio" name="q1" value="water">
-                    Water
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" value="chips">
-                    Chips
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" value="candy">
-                    Candy
-                </label>
+    <main>
+        <section id="home" class="hero section">
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Health awareness using mobile app</p>
+                <h1>Small daily signals for a healthier routine.</h1>
+                <p class="lead">HealthAware turns wellness education into a clear mobile experience with habit nudges, BMI screening, hydration tracking, and short lessons people can actually finish.</p>
+                <div class="actions">
+                    <a class="btn primary" href="#tools">Try Health Tools</a>
+                    <a class="btn ghost" href="#features">See App Flow</a>
+                </div>
+                <div class="hero-stats" aria-label="HealthAware app highlights">
+                    <span><strong>5</strong> awareness topics</span>
+                    <span><strong>8</strong> glass water goal</span>
+                    <span><strong>24/7</strong> education access</span>
+                </div>
             </div>
 
-
-            <div class="question">
-                <p><b>2. Which is generally a nutritious food choice?</b></p>
-
-                <label>
-                    <input type="radio" name="q2" value="fruits">
-                    Fruits and vegetables
-                </label>
-
-                <label>
-                    <input type="radio" name="q2" value="soda">
-                    Soft drinks
-                </label>
-
-                <label>
-                    <input type="radio" name="q2" value="candy">
-                    Candy
-                </label>
+            <div class="showcase reveal" aria-label="Mobile app preview">
+                <div class="halo" aria-hidden="true"></div>
+                <div class="phone">
+                    <div class="phone-top"></div>
+                    <div class="app-header">
+                        <span>Today</span>
+                        <strong>81%</strong>
+                    </div>
+                    <div class="focus-card">
+                        <span>Today's focus</span>
+                        <strong>Hydration + 20 min walk</strong>
+                        <div class="pulse-row" aria-hidden="true">
+                            <i></i><i></i><i></i>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div><strong id="heroWater">0</strong><span>glasses</span></div>
+                        <div><strong>7.5h</strong><span>sleep goal</span></div>
+                    </div>
+                    <div class="lesson-card">
+                        <span>Awareness lesson</span>
+                        <strong>Balanced plate basics</strong>
+                        <div class="progress"><i></i></div>
+                    </div>
+                    <button class="app-button" type="button" onclick="showMessage()">Start Journey</button>
+                </div>
             </div>
+        </section>
 
-
-            <div class="question">
-                <p><b>3. What can support mental well-being?</b></p>
-
-                <label>
-                    <input type="radio" name="q3" value="talk">
-                    Talking to someone you trust
-                </label>
-
-                <label>
-                    <input type="radio" name="q3" value="ignore">
-                    Ignoring problems
-                </label>
-
-                <label>
-                    <input type="radio" name="q3" value="stress">
-                    Avoiding all breaks
-                </label>
+        <section id="features" class="section">
+            <div class="section-head reveal">
+                <p class="eyebrow">Built for action</p>
+                <h2>A health app experience with education, tracking, and calm guidance.</h2>
+                <p>Short lessons, reminders, and screening tools make health awareness practical for students, families, and community programs.</p>
             </div>
-
-
-            <div class="question">
-                <p><b>4. Which is a simple way to stay active?</b></p>
-
-                <label>
-                    <input type="radio" name="q4" value="walking">
-                    Walking
-                </label>
-
-                <label>
-                    <input type="radio" name="q4" value="sleep">
-                    Sleeping all day
-                </label>
-
-                <label>
-                    <input type="radio" name="q4" value="sitting">
-                    Sitting for long periods
-                </label>
+            <div class="feature-grid">
+                <article class="card reveal">
+                    <span class="icon">01</span>
+                    <h3>Micro lessons</h3>
+                    <p>Simple nutrition, fitness, sleep, and mental well-being guidance delivered in small daily steps.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="icon">02</span>
+                    <h3>Smart reminders</h3>
+                    <p>Hydration and movement nudges help users build routines without turning health into noise.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="icon">03</span>
+                    <h3>Safe screening</h3>
+                    <p>BMI and quiz modules support awareness while clearly encouraging professional advice when needed.</p>
+                </article>
             </div>
+        </section>
 
-
-            <div class="question">
-                <p><b>5. What should you do for an urgent health problem?</b></p>
-
-                <label>
-                    <input type="radio" name="q5" value="help">
-                    Seek appropriate professional help
-                </label>
-
-                <label>
-                    <input type="radio" name="q5" value="ignore">
-                    Ignore it
-                </label>
-
-                <label>
-                    <input type="radio" name="q5" value="wait">
-                    Always wait without getting help
-                </label>
+        <section id="habits" class="section habits">
+            <div class="habit-intro reveal">
+                <p class="eyebrow">Healthy habits</p>
+                <h2>Core wellness areas, presented without overwhelm.</h2>
+                <p>Each topic is framed as a doable next step, not a lecture.</p>
             </div>
+            <div class="habit-list">
+                <article class="reveal">
+                    <span>01</span>
+                    <h3>Nutrition</h3>
+                    <p>Choose fruits, vegetables, whole grains, and balanced meals. Limit excess sugar and salt.</p>
+                </article>
+                <article class="reveal">
+                    <span>02</span>
+                    <h3>Movement</h3>
+                    <p>Walking, stretching, sport, or yoga can improve energy and support long-term health.</p>
+                </article>
+                <article class="reveal">
+                    <span>03</span>
+                    <h3>Mental well-being</h3>
+                    <p>Take breaks, sleep regularly, talk to trusted people, and seek help when stress feels heavy.</p>
+                </article>
+            </div>
+        </section>
 
+        <section id="tools" class="section tools-section">
+            <div class="section-head reveal">
+                <p class="eyebrow">Interactive tools</p>
+                <h2>Try the mobile health tools.</h2>
+            </div>
+            <div class="tools-grid">
+                <article class="tool-panel reveal">
+                    <div class="panel-title">
+                        <h3>BMI Screening</h3>
+                        <span>Awareness only</span>
+                    </div>
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" min="1" placeholder="170">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" min="1" placeholder="65">
+                    <button class="btn primary" type="button" onclick="calculateBMI()">Calculate BMI</button>
+                    <p id="bmiResult" class="result" aria-live="polite"></p>
+                </article>
 
-            <button type="button" onclick="checkQuiz()">
-                Submit Quiz
-            </button>
+                <article class="tool-panel water-panel reveal">
+                    <div class="panel-title">
+                        <h3>Water Tracker</h3>
+                        <span>Daily goal</span>
+                    </div>
+                    <p>Record each glass and aim for a steady hydration routine.</p>
+                    <div class="water-meter" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <button class="btn primary" type="button" onclick="drinkWater()">Add Glass</button>
+                    <p id="waterCount" class="result" aria-live="polite">Glasses today: 0</p>
+                </article>
+            </div>
+        </section>
 
-            <button type="button" onclick="resetQuiz()">
-                Restart Quiz
-            </button>
+        <section id="quiz" class="section quiz-section">
+            <div class="section-head reveal">
+                <p class="eyebrow">Awareness check</p>
+                <h2>A fast five-question health quiz.</h2>
+            </div>
+            <form id="quizForm" class="quiz-box reveal">
+                <fieldset>
+                    <legend>1. Which helps healthy hydration?</legend>
+                    <label><input type="radio" name="q1" value="water"> Water</label>
+                    <label><input type="radio" name="q1" value="chips"> Chips</label>
+                    <label><input type="radio" name="q1" value="candy"> Candy</label>
+                </fieldset>
+                <fieldset>
+                    <legend>2. Which is generally nutritious?</legend>
+                    <label><input type="radio" name="q2" value="fruits"> Fruits and vegetables</label>
+                    <label><input type="radio" name="q2" value="soda"> Soft drinks</label>
+                    <label><input type="radio" name="q2" value="candy"> Candy</label>
+                </fieldset>
+                <fieldset>
+                    <legend>3. What supports mental well-being?</legend>
+                    <label><input type="radio" name="q3" value="talk"> Talking to someone trusted</label>
+                    <label><input type="radio" name="q3" value="ignore"> Ignoring problems</label>
+                    <label><input type="radio" name="q3" value="stress"> Avoiding all breaks</label>
+                </fieldset>
+                <fieldset>
+                    <legend>4. Which is a simple way to stay active?</legend>
+                    <label><input type="radio" name="q4" value="walking"> Walking</label>
+                    <label><input type="radio" name="q4" value="sleep"> Sleeping all day</label>
+                    <label><input type="radio" name="q4" value="sitting"> Sitting for long periods</label>
+                </fieldset>
+                <fieldset>
+                    <legend>5. What should you do for an urgent health problem?</legend>
+                    <label><input type="radio" name="q5" value="help"> Seek professional or emergency help</label>
+                    <label><input type="radio" name="q5" value="ignore"> Ignore it</label>
+                    <label><input type="radio" name="q5" value="wait"> Always wait</label>
+                </fieldset>
+                <div class="actions">
+                    <button type="button" class="btn primary" onclick="checkQuiz()">Submit</button>
+                    <button type="button" class="btn ghost dark" onclick="resetQuiz()">Restart</button>
+                </div>
+                <p id="quizResult" class="result" aria-live="polite"></p>
+            </form>
+        </section>
 
-        </form>
+        <section id="download" class="section cta reveal">
+            <div>
+                <p class="eyebrow">Safety first</p>
+                <h2>HealthAware supports education, not diagnosis.</h2>
+                <p>For urgent symptoms or medical concerns, contact a qualified healthcare professional or local emergency service immediately.</p>
+            </div>
+            <div class="cta-action">
+                <button class="btn primary" type="button" onclick="helpMessage()">Get Help Information</button>
+                <p id="helpText" class="result" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
 
-        <div id="quizResult"></div>
+    <footer>
+        <p>© 2026 HealthAware. Healthy life, healthy mind, healthy future.</p>
+    </footer>
 
-    </div>
-
-</section>
-
-<!-- Water Reminder -->
-<section id="water">
-
-    <h2>💧 Water Reminder</h2>
-
-    <p>Click the button whenever you record a glass of water.</p>
-
-    <button onclick="drinkWater()">
-        I Drank Water 💧
-    </button>
-
-    <h3 id="waterCount">
-        Glasses today: 0
-    </h3>
-
-</section>
-
-<!-- Emergency -->
-<section class="emergency">
-
-    <h2>🚨 Need Help?</h2>
-
-    <p>
-        For an urgent medical situation, seek immediate help
-        from an appropriate healthcare professional or local emergency service.
-    </p>
-
-    <button onclick="helpMessage()">
-        Get Help Information
-    </button>
-
-    <p id="helpText"></p>
-
-</section>
-
-<footer>
-    <p>
-        © 2026 Health Awareness Campaign
-    </p>
-
-    <p>
-        Healthy Life • Healthy Mind • Healthy Future 💚
-    </p>
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

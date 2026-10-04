@@ -1,153 +1,92 @@
-// Start button
-function showMessage() {
-
-    alert(
-        "Welcome to the Health Awareness Campaign! 💚\n\n" +
-        "Learn, stay active, eat healthy and take care of your well-being."
-    );
-}
-
-
-// Water Counter
 let water = 0;
 
-function drinkWater() {
+const revealObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.16 })
+    : null;
 
-    water++;
-
-    document.getElementById("waterCount").innerHTML =
-        "Glasses today: " + water;
-
-    if (water == 8) {
-
-        alert(
-            "Great! You have recorded 8 glasses today. 💧"
-        );
+document.querySelectorAll(".reveal").forEach((element) => {
+    if (revealObserver) {
+        revealObserver.observe(element);
+    } else {
+        element.classList.add("is-visible");
     }
+});
+
+function showMessage() {
+    document.querySelector("#tools").scrollIntoView({ behavior: "smooth" });
 }
 
+function drinkWater() {
+    water = Math.min(water + 1, 8);
+    document.getElementById("waterCount").textContent =
+        water === 8 ? "Goal reached: 8 glasses today" : "Glasses today: " + water;
+    document.getElementById("heroWater").textContent = water;
 
-// Help Information
+    document.querySelectorAll(".water-meter span").forEach((bar, index) => {
+        bar.classList.toggle("filled", index < water);
+    });
+}
+
 function helpMessage() {
-
-    document.getElementById("helpText").innerHTML =
-        "For an urgent medical situation, contact your local emergency service or seek immediate help from a healthcare professional.";
+    document.getElementById("helpText").textContent =
+        "For an urgent medical situation, contact your local emergency service or a qualified healthcare professional immediately.";
 }
 
-
-// BMI Calculator
 function calculateBMI() {
+    const height = parseFloat(document.getElementById("height").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const result = document.getElementById("bmiResult");
 
-    let height =
-        parseFloat(document.getElementById("height").value);
-
-    let weight =
-        parseFloat(document.getElementById("weight").value);
-
-    let result =
-        document.getElementById("bmiResult");
-
-    if (
-        isNaN(height) ||
-        isNaN(weight) ||
-        height <= 0 ||
-        weight <= 0
-    ) {
-
-        result.innerHTML =
-            "⚠️ Please enter valid height and weight.";
-
+    if (!height || !weight || height <= 0 || weight <= 0) {
+        result.textContent = "Please enter a valid height and weight.";
         return;
     }
 
-    let heightMeter = height / 100;
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+    let category = "a general screening range";
 
-    let bmi =
-        weight / (heightMeter * heightMeter);
+    if (bmi < 18.5) category = "below the typical adult range";
+    else if (bmi < 25) category = "within the typical adult range";
+    else if (bmi < 30) category = "above the typical adult range";
+    else category = "well above the typical adult range";
 
-    bmi = bmi.toFixed(1);
-
-    result.innerHTML =
-        "Your BMI is: " + bmi +
-        "<br><br>" +
-        "BMI is a general screening measure. " +
-        "For people under 18, BMI should be interpreted " +
-        "using age- and sex-specific growth charts by a healthcare professional.";
+    result.textContent =
+        "Your BMI is " + bmi + ", which is " + category +
+        ". BMI is only a screening measure, not a diagnosis.";
 }
 
-
-// Health Quiz
 function checkQuiz() {
+    const answers = {
+        q1: "water",
+        q2: "fruits",
+        q3: "talk",
+        q4: "walking",
+        q5: "help"
+    };
 
-    let score = 0;
+    const score = Object.keys(answers).reduce((total, name) => {
+        const selected = document.querySelector('input[name="' + name + '"]:checked');
+        return total + (selected && selected.value === answers[name] ? 1 : 0);
+    }, 0);
 
-    let q1 = document.querySelector(
-        'input[name="q1"]:checked'
-    );
+    const message = score === 5
+        ? "Excellent awareness."
+        : score >= 3
+            ? "Good progress. Review the missed topics."
+            : "Keep learning the basics and try again.";
 
-    let q2 = document.querySelector(
-        'input[name="q2"]:checked'
-    );
-
-    let q3 = document.querySelector(
-        'input[name="q3"]:checked'
-    );
-
-    let q4 = document.querySelector(
-        'input[name="q4"]:checked'
-    );
-
-    let q5 = document.querySelector(
-        'input[name="q5"]:checked'
-    );
-
-
-    if (q1 && q1.value == "water") {
-        score++;
-    }
-
-    if (q2 && q2.value == "fruits") {
-        score++;
-    }
-
-    if (q3 && q3.value == "talk") {
-        score++;
-    }
-
-    if (q4 && q4.value == "walking") {
-        score++;
-    }
-
-    if (q5 && q5.value == "help") {
-        score++;
-    }
-
-
-    let message = "";
-
-    if (score == 5) {
-
-        message = "Excellent! 🎉";
-
-    } else if (score >= 3) {
-
-        message = "Good job! 👍";
-
-    } else {
-
-        message = "Keep learning about healthy habits! 🌱";
-    }
-
-
-    document.getElementById("quizResult").innerHTML =
-        "Your Score: " + score + "/5<br>" + message;
+    document.getElementById("quizResult").textContent =
+        "Your score: " + score + "/5. " + message;
 }
 
-
-// Restart Quiz
 function resetQuiz() {
-
     document.getElementById("quizForm").reset();
-
-    document.getElementById("quizResult").innerHTML = "";
+    document.getElementById("quizResult").textContent = "";
 }
